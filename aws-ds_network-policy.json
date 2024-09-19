@@ -1,0 +1,40 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Network",
+            "Effect": "Allow",
+            "Action": [
+				"cloudfront:Create*",
+				"cloudfront:Delete*",
+				"cloudfront:Update*",
+				"cloudfront:AssociateAlias",
+				"cloudfront:CopyDistribution",
+				"cloudfront:PublishFunction",
+				"cloudfront:TestFunction",
+				"cloudfront:TagResource",
+				"cloudfront:UntagResource",
+				"cloudfront-keyvaluestore:DeleteKey",
+				"cloudfront-keyvaluestore:PutKey",
+				"cloudfront-keyvaluestore:UpdateKeys",
+                "elasticloadbalancing:Create*",
+				"elasticloadbalancing:Delete*",
+				"elasticloadbalancing:Deregister*",
+				"elasticloadbalancing:Detach*",
+				"elasticloadbalancing:Disable*",
+				"elasticloadbalancing:Enable*",
+				"elasticloadbalancing:Modify*",
+				"elasticloadbalancing:Register*",
+				"elasticloadbalancing:Set*",
+				"elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+				"elasticloadbalancing:AttachLoadBalancerToSubnets",
+				"elasticloadbalancing:ConfigureHealthCheck",
+				"elasticloadbalancing:Add*",
+				"elasticloadbalancing:Remove*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}

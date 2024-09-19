@@ -1,0 +1,160 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ComputeContainer",
+            "Effect": "Allow",
+            "Action": [
+                
+				"application-autoscaling:TagResource",
+				"application-autoscaling:UntagResource",
+				"autoscaling:Attach*",
+				"autoscaling:Batch*",
+				"autoscaling:Cancel*",
+				"autoscaling:Complete*",
+				"autoscaling:Create*",
+				"autoscaling:Delete*",
+				"autoscaling:Disable*",
+				"autoscaling:Enable*",
+				"autoscaling:EnterStandby",
+				"autoscaling:ExecutePolicy",
+				"autoscaling:ExitStandby",
+				"autoscaling:Put*",
+				"autoscaling:RecordLifecycleActionHeartbeat",
+				"autoscaling:ResumeProcesses",
+				"autoscaling:RollbackInstanceRefresh",
+				"autoscaling:Set*",
+				"autoscaling:Start*",
+				"autoscaling:Suspend*",
+				"autoscaling:TerminateInstanceInAutoScalingGroup",
+				"autoscaling:UpdateAutoScalingGroup",
+				"ec2:Export*",
+				"ec2:Accept*",
+				"ec2:Advertise*",
+				"ec2:Allocate*",
+				"ec2:Apply*",
+				"ec2:Assign*",
+				"ec2:Associate*",
+				"ec2:Attach*",
+				"ec2:Authorize*",
+				"ec2:BundleInstance",
+				"ec2:Cancel*",
+				"ec2:Confirm*",
+				"ec2:Copy*",
+				"ec2:Create*",
+				"ec2:Delete*",
+				"ec2:Deprovision*",
+				"ec2:Deregister*",
+				"ec2:Detach*",
+				"ec2:Disable*",
+				"ec2:Disassociate*",
+				"ec2:Enable*",
+				"ec2:Export*",
+				"ec2:Import*",
+				"ec2:Inject*",
+				"ec2:Lock*",
+				"ec2:Modify*",
+				"ec2:Monitor*",
+				"ec2:Move*",
+				"ec2:Pause*",
+				"ec2:Provision*",
+				"ec2:Put*",
+				"ec2:RebootInstances",
+				"ec2:Register*",
+				"ec2:Reject*",
+				"ec2:Release*",
+				"ec2:Replace*",
+				"ec2:Report*",
+				"ec2:Request*",
+				"ec2:Reset*",
+				"ec2:Restore*",
+				"ec2:Revoke*",
+				"ec2:Run*",
+				"ec2:Send*",
+				"ec2:Start*",
+				"ec2:Stop*",
+				"ec2:Terminate*",
+				"ec2:Unassign*",
+				"ec2:Unlock*",
+				"ec2:Update*",
+				"ec2:Withdraw*",
+                "ec2messages:GetMessages",
+				"ec2messages:DeleteMessage",
+				"ec2messages:AcknowledgeMessage",
+				"ecs:Create*",
+				"ecs:Delete*",
+				"ecs:Deregister*",
+				"ecs:DiscoverPollEndpoint",
+				"ecs:ExecuteCommand",
+				"ecs:Poll",
+				"ecs:Put*",
+				"ecs:Register*",
+				"ecs:RunTask",
+				"ecs:Start*",
+				"ecs:Stop*",
+				"ecs:Submit*",
+				"ecs:Update*",
+				"ecs:TagResource",
+				"ecs:UntagResource",
+				"eks:Access*",
+				"eks:Associate*",
+				"eks:Create*",
+				"eks:Delete*",
+				"eks:Deregister*",
+				"eks:Disassociate*",
+				"eks:Register*",
+				"eks:Update*",
+				"eks:TagResource",
+				"eks:UntagResource",
+				"lambda:Create*",
+				"lambda:Delete*",
+				"lambda:Invoke*",
+				"lambda:Publish*",
+				"lambda:Put*",
+				"lambda:Update*",
+				"lambda:Add*",
+				"lambda:Delete*",
+				"lambda:Disable*",
+				"lambda:Enable*",
+				"lambda:Remove*",
+				"lambda:TagResource",
+				"lambda:UntagResource"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:StartSession"
+            ],
+            "Resource": [
+                "arn:aws:ec2:ap-southeast-1:*:instance/*"
+            ],
+            "Condition": {
+                "BoolIfExists": {
+                    "ssm:SessionDocumentAccessCheck": "true"
+                }
+            }
+        },
+        {
+            "Sid": "AllowTerminalSessionManagerToCommonInstancesWithoutCondition",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:StartSession"
+            ],
+            "Resource": [
+                "arn:aws:ssm:ap-southeast-1::document/AWS-StartPortForwardingSession"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:TerminateSession",
+                "ssm:ResumeSession"
+            ],
+            "Resource": [
+                "arn:aws:ssm:*:*:session/$${aws:username}-*"
+            ]
+        }
+    ]
+}
