@@ -85,7 +85,6 @@
 				"ssm:AddTagsToResource",
 				"ssm:RemoveTagsFromResource",
                 "ssm-guiconnect:CancelConnection",
-                "ssm-guiconnect:GetConnection",
                 "ssm-guiconnect:StartConnection",
 				"servicequotas:AssociateServiceQuotaTemplate",
 				"servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate",
