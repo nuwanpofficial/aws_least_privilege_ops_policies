@@ -110,6 +110,8 @@
                 "ssm:Describe*",
                 "ssm-guiconnect:Get*",
 				"ssm-guiconnect:List*",
+                "ssm-quicksetup:List*",
+				"ssm-quicksetup:Get*",
                 "ses:Describe*",
                 "ses:Get*",
                 "ses:List*",
